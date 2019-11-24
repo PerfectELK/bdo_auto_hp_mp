@@ -14,7 +14,7 @@ keys.append('f5')
 def listen(key, run):
     while True:
         keyboard.wait(key)
-        print(run)
+        print("ВКЛ" if run[0] else "ВЫКЛ")
         if run[0] is False:
             run[0] = True
         else:
@@ -37,7 +37,6 @@ hsv_hp_max = np.array((255, 60, 100), np.uint8)
 def select_color(min, max, image_array):
     return cv2.inRange(image_array, min, max)
 
-
 # 1700 stamina
 # 6000 hp num
 while True:
@@ -55,7 +54,7 @@ while True:
         if staminaNum <= 1700:
             PressKey(STAMINA)
             ReleaseKey(STAMINA)
-        if hpNum <= 5900:
+        if hpNum <= 5500:
             PressKey(HEALTH)
             ReleaseKey(HEALTH)
         time.sleep(.7)
